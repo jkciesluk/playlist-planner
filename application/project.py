@@ -4,16 +4,6 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
 
-class SpotifyHandler:
-  sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="e892b60798b94c6b9d526a7e2f408be5",
-                                                           client_secret="572c283a63af4aef9e0bd0b283b8081c"))
-  urn = 'spotify:artist:3jOstUTkEu2JkjvRdBA5Gu'
-
-  artist = sp.artist(urn)
-  print(artist)
-
-
-
 class MyMap:
   __key = "AsteIyPnZzvNB9aYKbrhImkSd7kFdJ-GZOz4GawrO6qssxqBMGW5z0Ks-xSm3A6s"
       
@@ -67,6 +57,6 @@ class Route:
 
 
 #SpotifyHandler()
-mapa = MyMap()
-route = mapa.getRouteData("Golczewo", "Golanice")
-print(route.intervalPoints())
+#mapa = MyMap()
+#route = mapa.getRouteData("Golczewo", "Golanice")
+#print(route.intervalPoints())

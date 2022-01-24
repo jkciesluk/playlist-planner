@@ -1,14 +1,13 @@
+from os import access
 import flask
 import json
 import requests
-from flask import redirect, request, session, url_for
-from application.project import Route
-from application.utils import encodeAuthorization, prepareUrl
-
-
-
-app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+from flask import redirect, request, session, url_for, render_template, make_response
+from datetime import datetime, timedelta
+from flask import current_app as app
+from .project import Route
+from .utils import encodeAuthorization, prepareUrl
+from .models import User, Token, db
 
 # dostanie login i haslo do konta
 # redirect do strony spotify do zalogowania
@@ -16,15 +15,31 @@ app.config["DEBUG"] = True
 @app.route('/register', methods=['GET', 'POST'])
 def register(): 
   if request.method == 'POST':
-    session['username'] = request.form['username']
+    username = request.form['username']
+    password = request.form['password']
+    
+    existing_user = User.query.filter(
+        User.username == username
+    ).first()
+    if existing_user:
+      return make_response(f'{username} already created!')
+    
+    new_user = User(
+      username=username,
+      created=datetime.now(),
+    )
+    new_user.set_password(password)
+    db.session.add(new_user)
+    db.session.commit()    
+    session['username'] = username
     redirect(prepareUrl())
   return '''
     <form method="post">
         Login<p><input type=text name=username>
+        Password<p><input type=text name=password>
         <p><input type=submit value=Login>
     </form>
     '''
-
 
 # dostanie od spotify code i state
 # ma wyslac request do spotify po access token
@@ -46,13 +61,22 @@ def createAccount():
     result = requests.post(url, headers=headers, data=body)
     jsonResult = json.loads(result.text)
     # dodaj do DB accessToken dla danego użytkownika - jsonResult['access_token'], razem z waznoscia jego tokenu
-      
+    owner = User.query.filter_by(username=session['username']).first()
+    token = Token(
+      access_token=jsonResult['access_token'],
+      expiration=datetime.now() + timedelta(seconds=3600),
+      refreshToken=jsonResult['refresh_token'], # TODO: sprawdzic czy taki jest response
+      owner=owner
+    )
+    db.session.add(token)
+    db.session.commit()
+    redirect(url_for('index'))
 
 
 @app.route('/')
 def index():
     if 'username' in session:
-        return f'Logged in as {session["username"]}'
+        return f'Logged in as {session["username"]}' # tutaj bedzie strona glowna
     return '<'
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -81,7 +105,7 @@ def refreshToken():
   # zapisujemy go do DB razem z waznoscia
   pass
 
-app.run()
+
 """
 Plan jest taki:
  - w pythonie pisze API
