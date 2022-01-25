@@ -1,6 +1,3 @@
-from os import access
-import flask
-import json
 import requests
 from flask import redirect, request, session, url_for, render_template, make_response
 from datetime import datetime, timedelta
@@ -36,8 +33,9 @@ def register():
   return '''
     <form method="post">
         Login<p><input type=text name=username>
-        Password<p><input type=text name=password>
-        <p><input type=submit value=Login>
+        Password<p><input type=password name=password>
+        Confirm Password<p><input type=password name=confirm>
+        <p><input type=submit value=Register>
     </form>
     '''
 
@@ -56,10 +54,10 @@ def createAccount():
     body = {'grant_type': 'authorization_code', 'code': code, 'redirect_uri': "http://127.0.0.1:5000/createAccount"}
     headers = {'Authorization': f'Basic {encodeAuthorization()}',
                'Content-Type': 'application/x-www-form-urlencoded'}
-    url = "https://accounts.spotify.com/authorize?"
+    url = "https://accounts.spotify.com/api/token"
     
     result = requests.post(url, headers=headers, data=body)
-    jsonResult = json.loads(result.text)
+    jsonResult = result.json()
     # dodaj do DB accessToken dla danego użytkownika - jsonResult['access_token'], razem z waznoscia jego tokenu
     owner = User.query.filter_by(username=session['username']).first()
     token = Token(
@@ -85,10 +83,11 @@ def login():
         session['username'] = request.form['username']
         return redirect(url_for('index'))
     return '''
-        <form method="post">
-            <p><input type=text name=username>
-            <p><input type=submit value=Login>
-        </form>
+      <form method="post">
+        Login<p><input type=text name=username>
+        Password<p><input type=text name=password>
+        <p><input type=submit value=Login>
+      </form>
     '''
 
 @app.route('/logout')
@@ -98,14 +97,24 @@ def logout():
     return redirect(url_for('index'))
 
 
-def refreshToken():
-  # jesli token jest niewazny
-  # wysylamy do Spotify request z tokenem
-  # dostajemy nowy token
-  # zapisujemy go do DB razem z waznoscia
-  pass
-
-
+def refreshToken(user, refresh_token):
+  body = {'grant_type': 'refresh_token', 'refresh_token': refresh_token}
+  headers = {'Authorization': f'Basic {encodeAuthorization()}',
+              'Content-Type': 'application/x-www-form-urlencoded'}
+  url = "https://accounts.spotify.com/api/token"
+  
+  result = requests.post(url, headers=headers, data=body)
+  jsonResult = result.json()
+  old_token = user.token
+  new_token = Token(
+      access_token=jsonResult['access_token'],
+      expiration=datetime.now() + timedelta(seconds=3600),
+      refreshToken=jsonResult['refresh_token'], # TODO: sprawdzic czy taki jest response
+      owner=user
+  )
+  db.session.add(new_token)
+  db.session.delete(old_token)
+  return new_token.access_token
 """
 Plan jest taki:
  - w pythonie pisze API

@@ -1,8 +1,4 @@
 import requests
-import json
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
-
 
 class MyMap:
   __key = "AsteIyPnZzvNB9aYKbrhImkSd7kFdJ-GZOz4GawrO6qssxqBMGW5z0Ks-xSm3A6s"
@@ -25,7 +21,7 @@ class MyMap:
       print("Error!")
       raise Exception
     else:
-      jsonRoute = json.loads(r.text)
+      jsonRoute = r.json()
       return jsonRoute["resourceSets"][0]["resources"][0]
   
   def getRouteData(self, start, end):
