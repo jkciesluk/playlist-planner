@@ -28,7 +28,7 @@ class User(UserMixin, db.Model):
     unique=False,
     nullable=True
   )
-  token = db.relationship("token", backref='owner', uselist=False)
+  token = db.relationship("Token", backref='owner', uselist=False)
 
   def set_password(self, password):
     """Create hashed password."""

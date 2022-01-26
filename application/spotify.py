@@ -24,6 +24,29 @@ class Spotify():
     r = requests.get(f"https://api.spotify.com/v1/me/top/{type}", params=params, headers=headers)
     return r.json
   
+  def getTopSongs(self, amount):
+    return self.stripSongs(self.getTopItems("tracks", amount, "long_term", 0))
+  
+
+  def getTopArtists(self, amount):
+    return self.stripArtists(self.getTopItems("artists", amount, "long_term", 0))
+  
+  def stripSongs(self, songs):
+    return list(map(lambda song: {
+      'spotify_uri': song['uri'],
+      'spotify_id': song['id'],
+      'duraion': song['duration_ms']/1000,
+      'name': song['name'],
+      'artists': self.stripArtists(song['artists'])
+    }, songs))
+
+  def stripArtists(self, artists):
+    return list(map(lambda artist: {
+      'name': artist['name'],
+      'spotify_id': artist['id'],
+      'spotify_uri': artist['uri'],
+    }, artists))
+
   def createPlaylist(self, name, description=""):
     headers = {'Authorization': f'Bearer {self.access_token}',
                'Content-Type': 'application/json'}
@@ -32,11 +55,11 @@ class Spotify():
       "description": description,
     }
     r = requests.post(f"https://api.spotify.com/v1/users/{self.user_id}/playlists", data=json.dumps(data), headers=headers)
-    return r.status_code
+    return r.json()['id']
 
   def addItemsToPlaylist(self, playlist_id, uris):
     headers = {'Authorization': f'Bearer {self.access_token}',
                'Content-Type': 'application/json'}
     data = {"uris": uris}
     r = requests.post(f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks", headers=headers, data=json.dumps(data))
-  
+

@@ -11,8 +11,8 @@ class Config:
 
     FLASK_APP = 'wsgi.py'
     FLASK_ENV = environ.get('FLASK_ENV')
-    SECRET_KEY = environ.get('SECRET_KEY')
-
+    #SECRET_KEY = environ.get('SECRET_KEY')
+    SECRET_KEY = "JASNDhbS"
     # Flask-SQLAlchemy
     SQLALCHEMY_DATABASE_URI = "sqlite:///database.db"
     SQLALCHEMY_ECHO = True

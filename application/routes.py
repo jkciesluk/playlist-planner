@@ -1,3 +1,4 @@
+from traceback import print_tb
 import requests
 from flask import redirect, request, session, url_for, render_template, make_response
 from datetime import datetime, timedelta
@@ -14,7 +15,10 @@ def register():
   if request.method == 'POST':
     username = request.form['username']
     password = request.form['password']
-    
+    confirm = request.form['confirm']
+    if(not (password == confirm)):
+      return "Passwords dont match"
+
     existing_user = User.query.filter(
         User.username == username
     ).first()
@@ -23,13 +27,13 @@ def register():
     
     new_user = User(
       username=username,
-      created=datetime.now(),
+      created_on=datetime.now(),
     )
     new_user.set_password(password)
     db.session.add(new_user)
     db.session.commit()    
     session['username'] = username
-    redirect(prepareUrl())
+    return redirect(prepareUrl())
   return '''
     <form method="post">
         Login<p><input type=text name=username>
@@ -45,11 +49,13 @@ def register():
 # headery: Authorisation, Content-Type
 # dostaniemy jsona z min accessTokenem
 # zapisujemy ten access token do bazy danych  
-@app.route('/createAccount', methods=['GET, POST, PUT'])
-def createAccount(): 
+@app.route('/createAccount', methods=['GET'])
+def createAccount():
   args = request.args
+  print(args)
   code = args.get('code')
   state = args.get('state')
+  print(code)
   if(state == "abbaabbaabbaabba"):
     body = {'grant_type': 'authorization_code', 'code': code, 'redirect_uri': "http://127.0.0.1:5000/createAccount"}
     headers = {'Authorization': f'Basic {encodeAuthorization()}',
@@ -63,23 +69,26 @@ def createAccount():
     token = Token(
       access_token=jsonResult['access_token'],
       expiration=datetime.now() + timedelta(seconds=3600),
-      refreshToken=jsonResult['refresh_token'], # TODO: sprawdzic czy taki jest response
+      refresh_token=jsonResult['refresh_token'], # TODO: sprawdzic czy taki jest response
       owner=owner
     )
     db.session.add(token)
     db.session.commit()
-    redirect(url_for('index'))
+    return redirect(url_for('index'))
 
 
 @app.route('/')
 def index():
     if 'username' in session:
         return f'Logged in as {session["username"]}' # tutaj bedzie strona glowna
-    return '<'
+    return 'XD'
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
+        existingUser = User.query.filter_by(username=session['username'])
+        # jesli taki jest to zaloguj
+
         session['username'] = request.form['username']
         return redirect(url_for('index'))
     return '''
@@ -109,12 +118,15 @@ def refreshToken(user, refresh_token):
   new_token = Token(
       access_token=jsonResult['access_token'],
       expiration=datetime.now() + timedelta(seconds=3600),
-      refreshToken=jsonResult['refresh_token'], # TODO: sprawdzic czy taki jest response
+      refresh_token=jsonResult['refresh_token'], # TODO: sprawdzic czy taki jest response
       owner=user
   )
   db.session.add(new_token)
   db.session.delete(old_token)
   return new_token.access_token
+
+
+
 """
 Plan jest taki:
  - w pythonie pisze API
