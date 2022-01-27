@@ -1,5 +1,5 @@
-from os import access
 import requests
+
 from flask import redirect, request, session, url_for, render_template, make_response
 from datetime import datetime, timedelta
 from flask import current_app as app
@@ -87,13 +87,21 @@ def index():
     user = User.query.filter_by(username = session['username']).first()
     user_id = user.id
     token = Token.query.filter_by(owner_id = user_id).first()
-    refToken = token.refresh_token
-    #accessToken = refreshToken(user, refToken)
-    accessToken = token.access_token
+    
+    if(token.expiration < datetime.now()):
+      refToken = token.refresh_token
+      accessToken = refreshToken(user, refToken)
+    else:
+      accessToken = token.access_token
     spotifyClient = Spotify(accessToken)
     merged = PlaylistForRoute(route, spotifyClient, start, end)
-    merged.createPlaylistForRoute()
-    return "No i moze dziala"
+    points = merged.createPlaylistForRoute()
+    
+    return render_template('index.html',
+      start = start,
+      end = end,
+      points=points)
+  
   elif 'username' in session:
     return '''
       <form method="post">
@@ -102,7 +110,7 @@ def index():
         <p><input type=submit value=Login>
       </form>
     '''
-  return 'You need to login first'
+  return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -120,7 +128,6 @@ def login():
 @app.route('/logout')
 def logout():
     # remove the username from the session if it's there
-    print("sesja:"+  session['username'])
     session.pop('username', None)
     return redirect(url_for('index'))
 

@@ -11,7 +11,6 @@ class Spotify():
     headers = {'Authorization': f'Bearer {self.access_token}',
                'Content-Type': 'application/json'}
     r = requests.get("https://api.spotify.com/v1/me", headers=headers)
-    print(r.status_code)
     self.user_id = r.json()['id']
 
   def getTopItems(self, type, limit, time_range,offset=0):
@@ -22,9 +21,7 @@ class Spotify():
     }
     headers = {'Authorization': f'Bearer {self.access_token}',
                'Content-Type': 'application/json'}
-    print("zaraz wysle req")
     r = requests.get(f"https://api.spotify.com/v1/me/top/{type}", params=params, headers=headers)
-    print(r.status_code)
     
     return r.json()['items']
   

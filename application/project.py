@@ -53,7 +53,7 @@ class Route:
     for point in self.itineraryPoints:
       distance += point["intervalDistance"]
       duration += point["intervalDuration"]
-      intervals.append({"travelDistance": distance, "travelDuration": duration, "coords": point["coords"], 'maneuver': point['maneuver']})
+      intervals.append({"travelDistance": distance, "travelDuration": duration, "lat": point["coords"][0], 'long': point['coords'][1], 'maneuver': point['maneuver']})
     return intervals
 
 
@@ -79,7 +79,7 @@ class PlaylistForRoute():
     zipped = []
     for song in songs:
       timeCovered += song['duration']
-      zipped.append((timeCovered, song))
+      zipped.append({'timeCovered': timeCovered, 'song': song})
     return zipped
 
   def songsOnManeuvers(self, zipped):
@@ -87,10 +87,10 @@ class PlaylistForRoute():
     i = 0
     result = []
     for point in maneuvers:
-      while(zipped[i][0] < point['travelDuration']):
+      while(zipped[i]['timeCovered'] < point['travelDuration']):
         i += 1
-      result.append((point, zipped[i][1]))
-    return result
+      result.append({'lat': point['lat'], 'long': point['long'], 'maneuver': point['maneuver'], 'song': zipped[i]['song']['name'], 'artists': list(map(lambda artist: artist['name'], zipped[i]['song']['artists']))})
+    return {'items': result}
 
   def createPlaylistForRoute(self):
     name = f'{self.start} - {self.end}'
@@ -98,13 +98,23 @@ class PlaylistForRoute():
     playlist = self.spotifyClient.createPlaylist(name, description)
     songs = self.songsForRoute()
     uris = list(map(lambda song: song['spotify_uri'], songs))
-    print("tu jestem")
     res = self.spotifyClient.addItemsToPlaylist(playlist, uris)
-    print(res)
     return self.songsOnManeuvers(self.zipSongsWithTime(songs))
 
-
-  
+# Point structure:
+# { 'items': [{
+#    'lat': LAT
+#    'long': LONG
+#    'maneuver': description
+#    'song': title
+#    'artists': array of names
+#   }   
+#  ]
+# }
+# 
+# 
+# 
+#  
 #SpotifyHandler()
 #mapa = MyMap()
 #route = mapa.getRouteData("Golczewo", "Golanice")
