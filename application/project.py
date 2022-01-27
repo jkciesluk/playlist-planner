@@ -1,6 +1,6 @@
 import requests
 from .spotify import Spotify
-
+import random
 class MyMap:
   __key = "AsteIyPnZzvNB9aYKbrhImkSd7kFdJ-GZOz4GawrO6qssxqBMGW5z0Ks-xSm3A6s"
       
@@ -66,14 +66,19 @@ class PlaylistForRoute():
     self.length = route.totalDuration
   
   def songsForRoute(self):
-    tracks = self.spotifyClient.getTopSongs(20)
     timeCovered = 0.0
-    i = 0
-    while (timeCovered < self.length):
-      timeCovered += tracks[i]['duration']
-      i += 1
-    return tracks[:i]
-
+    j = 0
+    result = []
+    while(timeCovered < self.length):
+      i = 0
+      tracks = self.spotifyClient.getTopSongs(40, 40*j)
+      while (timeCovered < self.length and i < len(tracks)):
+        timeCovered += tracks[i]['duration']
+        result.append(tracks[i])
+        i += 1
+      j += 1
+    random.shuffle(result)
+    return result
   def zipSongsWithTime(self, songs):
     timeCovered = 0.0
     zipped = []

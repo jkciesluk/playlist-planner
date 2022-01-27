@@ -25,8 +25,8 @@ class Spotify():
     
     return r.json()['items']
   
-  def getTopSongs(self, amount):
-    return self.stripSongs(self.getTopItems("tracks", amount, "medium_term", 0))
+  def getTopSongs(self, amount, offset=0):
+    return self.stripSongs(self.getTopItems("tracks", amount, "long_term", offset))
   
 
   def getTopArtists(self, amount):

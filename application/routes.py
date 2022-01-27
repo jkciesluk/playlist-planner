@@ -37,8 +37,8 @@ def register():
     return redirect(prepareUrl())
   return '''
     <form method="post">
-        Login<p><input type=text name=username>
-        Password<p><input type=password name=password>
+        Login<p><input type=text name=username><br>
+        Password<p><input type=password name=password><br>
         Confirm Password<p><input type=password name=confirm>
         <p><input type=submit value=Register>
     </form>
@@ -86,8 +86,8 @@ def index():
     route = map.getRouteData(start, end)
     user = User.query.filter_by(username = session['username']).first()
     user_id = user.id
-    token = Token.query.filter_by(owner_id = user_id).first()
-    
+    # token = Token.query.filter_by(owner_id = user_id).first()
+    token = user.token
     if(token.expiration < datetime.now()):
       refToken = token.refresh_token
       accessToken = refreshToken(user, refToken)
@@ -104,10 +104,11 @@ def index():
   
   elif 'username' in session:
     return '''
+      Create playlist for route
       <form method="post">
-        Start<p><input type=text name=start>
+        Start<p><input type=text name=start><br>
         End<p><input type=text name=end>
-        <p><input type=submit value=Login>
+        <p><input type=submit value=Create>
       </form>
     '''
   return redirect(url_for('login'))
@@ -119,8 +120,8 @@ def login():
     return redirect(url_for('index'))
   return '''
       <form method="post">
-        Login<p><input type=text name=username>
-        Password<p><input type=text name=password>
+        Login<p><input type=text name=username><br>
+        Password<p><input type=password name=password>
         <p><input type=submit value=Login>
       </form>
     '''
