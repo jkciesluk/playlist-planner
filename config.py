@@ -15,5 +15,5 @@ class Config:
     SECRET_KEY = "JASNDhbS"
     # Flask-SQLAlchemy
     SQLALCHEMY_DATABASE_URI = "sqlite:///database.db"
-    SQLALCHEMY_ECHO = True
+    SQLALCHEMY_ECHO = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False

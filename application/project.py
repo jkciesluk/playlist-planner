@@ -44,7 +44,7 @@ class Route:
     self.route = route
     self.itineraryPoints = route["itineraryPoints"]    
     self.totalDistance = route["travelDistance"]    
-    self.TotalDuration = route["travelDuration"]    
+    self.totalDuration = route["travelDuration"]    
 
   def intervalPoints(self):
     distance = 0
@@ -66,7 +66,7 @@ class PlaylistForRoute():
     self.length = route.totalDuration
   
   def songsForRoute(self):
-    tracks = self.spotifyClient.getTopSongs(40)
+    tracks = self.spotifyClient.getTopSongs(20)
     timeCovered = 0.0
     i = 0
     while (timeCovered < self.length):
@@ -93,12 +93,14 @@ class PlaylistForRoute():
     return result
 
   def createPlaylistForRoute(self):
-    name = f'{self.route.start} - {self.route.end}'
-    description = f'Playlist for trip from {self.route.start} to {self.route.end}'
+    name = f'{self.start} - {self.end}'
+    description = f'Playlist for trip from {self.start} to {self.end}'
     playlist = self.spotifyClient.createPlaylist(name, description)
     songs = self.songsForRoute()
     uris = list(map(lambda song: song['spotify_uri'], songs))
-    self.spotifyClient.addItemsToPlaylist(playlist, uris)
+    print("tu jestem")
+    res = self.spotifyClient.addItemsToPlaylist(playlist, uris)
+    print(res)
     return self.songsOnManeuvers(self.zipSongsWithTime(songs))
 
 
@@ -107,3 +109,4 @@ class PlaylistForRoute():
 #mapa = MyMap()
 #route = mapa.getRouteData("Golczewo", "Golanice")
 #print(route.intervalPoints())
+

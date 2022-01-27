@@ -11,8 +11,9 @@ class Spotify():
     headers = {'Authorization': f'Bearer {self.access_token}',
                'Content-Type': 'application/json'}
     r = requests.get("https://api.spotify.com/v1/me", headers=headers)
-    self.id = r.json()['id']
-  
+    print(r.status_code)
+    self.user_id = r.json()['id']
+
   def getTopItems(self, type, limit, time_range,offset=0):
     params = {
       "limit": limit,
@@ -21,11 +22,14 @@ class Spotify():
     }
     headers = {'Authorization': f'Bearer {self.access_token}',
                'Content-Type': 'application/json'}
+    print("zaraz wysle req")
     r = requests.get(f"https://api.spotify.com/v1/me/top/{type}", params=params, headers=headers)
-    return r.json
+    print(r.status_code)
+    
+    return r.json()['items']
   
   def getTopSongs(self, amount):
-    return self.stripSongs(self.getTopItems("tracks", amount, "long_term", 0))
+    return self.stripSongs(self.getTopItems("tracks", amount, "medium_term", 0))
   
 
   def getTopArtists(self, amount):
@@ -35,7 +39,7 @@ class Spotify():
     return list(map(lambda song: {
       'spotify_uri': song['uri'],
       'spotify_id': song['id'],
-      'duraion': song['duration_ms']/1000,
+      'duration': song['duration_ms']/1000,
       'name': song['name'],
       'artists': self.stripArtists(song['artists'])
     }, songs))
@@ -62,4 +66,4 @@ class Spotify():
                'Content-Type': 'application/json'}
     data = {"uris": uris}
     r = requests.post(f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks", headers=headers, data=json.dumps(data))
-
+    return 0
