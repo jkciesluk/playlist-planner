@@ -42,6 +42,7 @@ def register():
         Confirm Password<p><input type=password name=confirm>
         <p><input type=submit value=Register>
     </form>
+    <a href="/login">Already have an account? Log in</a>
     '''
 
 # dostanie od spotify code i state
@@ -82,10 +83,14 @@ def index():
   if request.method == 'POST':
     start = request.form['start']
     end = request.form['end']
+    travel = request.form['travel']
+    term = request.form['term']
+    print(travel)
+    print(term)
     map = MyMap()
-    route = map.getRouteData(start, end)
+    route = map.getRouteData(start, end, travel.capitalize())
     user = User.query.filter_by(username = session['username']).first()
-    user_id = user.id
+    #user_id = user.id
     # token = Token.query.filter_by(owner_id = user_id).first()
     token = user.token
     if(token.expiration < datetime.now()):
@@ -95,21 +100,39 @@ def index():
       accessToken = token.access_token
     spotifyClient = Spotify(accessToken)
     merged = PlaylistForRoute(route, spotifyClient, start, end)
-    points = merged.createPlaylistForRoute()
+    points = merged.createPlaylistForRoute(term)
     
     return render_template('index.html',
       start = start,
       end = end,
+      travel=travel,
       points=points)
   
   elif 'username' in session:
     return '''
-      Create playlist for route
+      Create playlist for route<br>
       <form method="post">
-        Start<p><input type=text name=start><br>
-        End<p><input type=text name=end>
+        Start<p><input type=text name='start'><br>
+        End<p><input type=text name='end'><br>
+        Travelling option:<br>
+        <input type="radio" id="walking" name="travel" value="walking">
+        <label for="walking">Walking</label><br>
+        <input type="radio" id="transit" name="travel" value="transit">
+        <label for="transit">Public transit</label><br>
+        <input type="radio" id="driving" name="travel" value="driving">
+        <label for="driving">Driving</label><br>
+        
+        Favourite music from:<br>
+        <input type="radio" id="long_term" name="term" value="long_term">
+        <label for="long_term">Long term (few years)</label><br>
+        <input type="radio" id="medium_term" name="term" value="medium_term">
+        <label for="medium_term">Medium term (6 months)</label><br>
+        <input type="radio" id="short_term" name="term" value="short_term">
+        <label for="short_term">Short term (4 weeks)</label><br>
+        
         <p><input type=submit value=Create>
       </form>
+      <a href="/logout">Logout</a>
     '''
   return redirect(url_for('login'))
 
@@ -121,9 +144,10 @@ def login():
   return '''
       <form method="post">
         Login<p><input type=text name=username><br>
-        Password<p><input type=password name=password>
-        <p><input type=submit value=Login>
+        Password<p><input type=password name=password><br>
+        <p><input type=submit value=Login><br>
       </form>
+      <a href="/register">Don't have an account? Register</a>
     '''
 
 @app.route('/logout')
@@ -154,20 +178,3 @@ def refreshToken(user, refresh_token):
   return new_token.access_token
 
 
-
-"""
-Plan jest taki:
- - w pythonie pisze API
- - apka w js, input fields z opcjami trasy itd
- - wysylam request do pythona z startem i końcem
- - python zwaraca mi:
-  a) trase która wyswietlam na mapie + spis punktow, piosenki ze spotify, playliste
-  b) tylko spis punktów i playliste, a trase tutaj obliczam po raz drugi
-  (raczej wybiore B, przynajmniej chwilowo)
- - W PRZYPADKU WYBORU A:
-  - dostaje liste z koordami punktów i aktualnie lecaca piosenka
-  - dodaje na mape pushpiny w kazdym z tych punktów, z infoboxem pod którym bedzie dana piosenka
- - gdzies jeszcze umieszcze cala playliste
- - byc moze z logowaniem sie do spotify? (to by bylo bardzo git, chyba tak zrobie)
- 
-"""

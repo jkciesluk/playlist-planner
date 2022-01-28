@@ -30,8 +30,8 @@ class MyMap:
       jsonRoute = r.json()
       return jsonRoute["resourceSets"][0]["resources"][0]
   
-  def getRouteData(self, start, end):
-    route = self.getRoute(start, end)
+  def getRouteData(self, start, end, type):
+    route = self.getRoute(start, end, type)
     totalDistance = self.getTotalDistance(route)
     totalDuration = self.getTotalDuration(route)
     itineraryPoints = self.getItineraryPoints(route)
@@ -53,7 +53,11 @@ class Route:
     for point in self.itineraryPoints:
       distance += point["intervalDistance"]
       duration += point["intervalDuration"]
-      intervals.append({"travelDistance": distance, "travelDuration": duration, "lat": point["coords"][0], 'long': point['coords'][1], 'maneuver': point['maneuver']})
+      intervals.append({"travelDistance": distance, 
+                        "travelDuration": duration, 
+                        "lat": point["coords"][0], 
+                        'long': point['coords'][1], 
+                        'maneuver': point['maneuver']})
     return intervals
 
 
@@ -65,13 +69,13 @@ class PlaylistForRoute():
     self.spotifyClient = spotifyClient     
     self.length = route.totalDuration
   
-  def songsForRoute(self):
+  def songsForRoute(self, time_range):
     timeCovered = 0.0
     j = 0
     result = []
     while(timeCovered < self.length):
       i = 0
-      tracks = self.spotifyClient.getTopSongs(40, 40*j)
+      tracks = self.spotifyClient.getTopSongs(40, time_range, 40*j)
       while (timeCovered < self.length and i < len(tracks)):
         timeCovered += tracks[i]['duration']
         result.append(tracks[i])
@@ -94,34 +98,18 @@ class PlaylistForRoute():
     for point in maneuvers:
       while(zipped[i]['timeCovered'] < point['travelDuration']):
         i += 1
-      result.append({'lat': point['lat'], 'long': point['long'], 'maneuver': point['maneuver'], 'song': zipped[i]['song']['name'], 'artists': list(map(lambda artist: artist['name'], zipped[i]['song']['artists']))})
+      result.append({'lat': point['lat'], 
+                     'long': point['long'], 
+                     'maneuver': point['maneuver'], 
+                     'song': zipped[i]['song']['name'], 
+                     'artists': list(map(lambda artist: artist['name'], zipped[i]['song']['artists']))})
     return {'items': result}
 
-  def createPlaylistForRoute(self):
+  def createPlaylistForRoute(self, time_range):
     name = f'{self.start} - {self.end}'
     description = f'Playlist for trip from {self.start} to {self.end}'
     playlist = self.spotifyClient.createPlaylist(name, description)
-    songs = self.songsForRoute()
+    songs = self.songsForRoute(time_range)
     uris = list(map(lambda song: song['spotify_uri'], songs))
     res = self.spotifyClient.addItemsToPlaylist(playlist, uris)
     return self.songsOnManeuvers(self.zipSongsWithTime(songs))
-
-# Point structure:
-# { 'items': [{
-#    'lat': LAT
-#    'long': LONG
-#    'maneuver': description
-#    'song': title
-#    'artists': array of names
-#   }   
-#  ]
-# }
-# 
-# 
-# 
-#  
-#SpotifyHandler()
-#mapa = MyMap()
-#route = mapa.getRouteData("Golczewo", "Golanice")
-#print(route.intervalPoints())
-

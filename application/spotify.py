@@ -25,12 +25,12 @@ class Spotify():
     
     return r.json()['items']
   
-  def getTopSongs(self, amount, offset=0):
-    return self.stripSongs(self.getTopItems("tracks", amount, "long_term", offset))
+  def getTopSongs(self, amount, time_range, offset=0):
+    return self.stripSongs(self.getTopItems("tracks", amount, time_range, offset))
   
 
-  def getTopArtists(self, amount):
-    return self.stripArtists(self.getTopItems("artists", amount, "long_term", 0))
+  def getTopArtists(self, amount, time_range, offset=0):
+    return self.stripArtists(self.getTopItems("artists", amount, time_range, offset))
   
   def stripSongs(self, songs):
     return list(map(lambda song: {
