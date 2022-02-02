@@ -3,7 +3,8 @@ import requests
 from flask import redirect, request, session, url_for, render_template, make_response
 from datetime import datetime, timedelta
 from flask import current_app as app
-from .project import MyMap, PlaylistForRoute
+from .project import PlaylistForRoute
+from .mymap import MyMap
 from .spotify import Spotify
 from .utils import encodeAuthorization, prepareUrl
 from .models import User, Token, db
@@ -58,7 +59,7 @@ def createAccount():
     args = request.args
     code = args.get('code')
     state = args.get('state')
-    if(state == "abbaabbaabbaabba"):
+    if(state == "securestatecode"):
         body = {'grant_type': 'authorization_code', 'code': code,
                 'redirect_uri': "http://127.0.0.1:5000/createAccount"}
         headers = {'Authorization': f'Basic {encodeAuthorization()}',
@@ -67,12 +68,10 @@ def createAccount():
 
         result = requests.post(url, headers=headers, data=body)
         jsonResult = result.json()
-        # dodaj do DB accessToken dla danego użytkownika - jsonResult['access_token'], razem z waznoscia jego tokenu
         owner = User.query.filter_by(username=session['username']).first()
         token = Token(
             access_token=jsonResult['access_token'],
             expiration=datetime.now() + timedelta(seconds=3600),
-            # TODO: sprawdzic czy taki jest response
             refresh_token=jsonResult['refresh_token'],
             owner=owner,
             owner_id=owner.id
@@ -89,8 +88,6 @@ def index():
         end = request.form['end']
         travel = request.form['travel']
         term = request.form['term']
-        print(travel)
-        print(term)
         map = MyMap()
         route = map.getRouteData(start, end, travel.capitalize())
         user = User.query.filter_by(username=session['username']).first()

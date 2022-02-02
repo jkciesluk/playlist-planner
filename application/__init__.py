@@ -15,9 +15,7 @@ def init_app():
     db.init_app(app)
 
     with app.app_context():
-        from . import routes
-        from . import project
-        from . import spotify
+        from . import routes, project, spotify, mymap, route, utils, models
         db.create_all()
 
         return app

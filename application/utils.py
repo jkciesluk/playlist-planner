@@ -17,6 +17,6 @@ def prepareUrl():
               "client_id": "e892b60798b94c6b9d526a7e2f408be5",
               "scope": "user-read-private user-read-email playlist-modify-public user-top-read",
               "redirect_uri": "http://127.0.0.1:5000/createAccount",
-              "state": "abbaabbaabbaabba"}
+              "state": "securestatecode"}
     req.prepare_url(url, params)
     return req.url
