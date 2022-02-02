@@ -6,18 +6,18 @@ db = SQLAlchemy()
 
 
 def init_app():
-  """Construct the core app object."""
-  app = Flask(__name__, instance_relative_config=False)
-  
-  # Application Configuration
-  app.config.from_object('config.Config')
+    """Construct the core app object."""
+    app = Flask(__name__, instance_relative_config=False)
 
-  db.init_app(app)
+    # Application Configuration
+    app.config.from_object('config.Config')
 
-  with app.app_context():
-    from . import routes
-    from . import project
-    from . import spotify
-    db.create_all()
+    db.init_app(app)
 
-    return app
+    with app.app_context():
+        from . import routes
+        from . import project
+        from . import spotify
+        db.create_all()
+
+        return app
