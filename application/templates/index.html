@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Route from {{start}} to {{end}}</title>
+    <meta charset="utf-8" />
+  <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AsteIyPnZzvNB9aYKbrhImkSd7kFdJ-GZOz4GawrO6qssxqBMGW5z0Ks-xSm3A6s' async defer></script>
+	<script type='text/javascript'>
+    var infobox;
+    var pointsjson = {{ points|tojson }};
+    var points = pointsjson.items;
+    var startPoint = {{start|tojson}};
+    var endPoint = {{end|tojson}};
+    var travelType = {{travel|tojson}}
+    var map;
+    function GetMap() {
+        map = new Microsoft.Maps.Map('#myMap', {
+          credentials: 'AsteIyPnZzvNB9aYKbrhImkSd7kFdJ-GZOz4GawrO6qssxqBMGW5z0Ks-xSm3A6s',
+          center: new Microsoft.Maps.Location(53.826111, 14.981944)
+        });
+
+        Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
+                //Create an instance of the directions manager.
+                var directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+
+
+                switch (travelType) {
+                  case 'driving':
+                    directionsManager.setRequestOptions({
+                      routeMode: Microsoft.Maps.Directions.RouteMode.driving,
+                    });
+                    break;
+                  case 'walking':
+                    directionsManager.setRequestOptions({
+                      routeMode: Microsoft.Maps.Directions.RouteMode.walking,
+                    });
+                    break;
+                  case 'transit':
+                    directionsManager.setRequestOptions({
+                      routeMode: Microsoft.Maps.Directions.RouteMode.transit,
+                    });
+                    break
+                } 
+                
+                
+                var seattleWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: startPoint });
+                directionsManager.addWaypoint(seattleWaypoint);
+
+                var workWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: endPoint });
+                directionsManager.addWaypoint(workWaypoint);
+
+                //Calculate directions.
+                directionsManager.calculateDirections();
+        });
+        //Create an infobox at the center of the map but don't show it.
+        infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
+            visible: false
+        });
+
+        //Assign the infobox to a map instance.
+        infobox.setMap(map);
+
+        //Create random locations in the map bounds.
+        for (var i = 0; i < points.length; i++) {
+            var location = new Microsoft.Maps.Location(points[i].lat, points[i].long);
+            var pin = new Microsoft.Maps.Pushpin(location);
+
+            //Store some metadata with the pushpin.
+            pin.metadata = {
+                title: points[i].maneuver,
+                description: points[i].song + "\n" + points[i].artists
+            };
+            //Add a click event handler to the pushpin.
+            Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+
+            //Add pushpin to the map.
+            map.entities.push(pin);
+
+        }
+    }
+
+    function pushpinClicked(e) {
+        //Make sure the infobox has metadata to display.
+        if (e.target.metadata) {
+            //Set the infobox options with the metadata of the pushpin.
+            infobox.setOptions({
+                location: e.target.getLocation(),
+                title: e.target.metadata.title,
+                description: e.target.metadata.description,
+                visible: true
+            });
+        }
+    };
+    </script>
+    
+</head>
+<body>
+    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+    <ul id="myList"></ul>
+    <br>
+    <a href='/'>Create another playlist</a><br>
+    <a href="/logout">Logout</a>
+
+</body>
+</html>

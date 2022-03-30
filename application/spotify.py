@@ -13,7 +13,8 @@ class Spotify():
         headers = {'Authorization': f'Bearer {self.access_token}',
                    'Content-Type': 'application/json'}
         r = requests.get("https://api.spotify.com/v1/me", headers=headers)
-        self.user_id = r.json()['id']
+        if 'id' in r.json():
+          self.user_id = r.json()['id']
 
     # get user top items from time_range
     def getTopItems(self, type, limit, time_range, offset=0):

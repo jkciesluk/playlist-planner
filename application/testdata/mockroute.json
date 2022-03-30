@@ -1,0 +1,2533 @@
+{
+    "authenticationResultCode": "ValidCredentials",
+    "brandLogoUri": "http://dev.virtualearth.net/Branding/logo_powered_by.png",
+    "copyright": "Copyright © 2022 Microsoft and its suppliers. All rights reserved. This API cannot be accessed and the content and any results may not be used, reproduced or transmitted in any manner without express written permission from Microsoft Corporation.",
+    "resourceSets": [
+        {
+            "estimatedTotal": 1,
+            "resources": [
+                {
+                    "__type": "Route:http://schemas.microsoft.com/search/local/ws/rest/v1",
+                    "bbox": [
+                        51.019277,
+                        14.568723,
+                        53.840079,
+                        17.025558
+                    ],
+                    "id": "v70,h-664297125,i0,a0,cen-US,dAAAAAAAAAAA1,y0,s1,m1,o1,t4,wJy8yAb_qSkBGskeoGcItQA2~ABX4s8hhKdNWAADgAaAi3D4C0~R29sY3pld28sIFBvbGFuZA2~~~~~~~~v12,wUkmdgCaOSUCzJhb4igYxQA2~ABX4s8jhBpRYAADgAeg7Kj8A0~V3JvY8WCYXcsIFBvbGFuZA2~~~~~~~~v12,k1",
+                    "distanceUnit": "Kilometer",
+                    "durationUnit": "Second",
+                    "price": -1,
+                    "routeLegs": [
+                        {
+                            "actualEnd": {
+                                "type": "Point",
+                                "coordinates": [
+                                    51.110551,
+                                    17.025558
+                                ]
+                            },
+                            "actualStart": {
+                                "type": "Point",
+                                "coordinates": [
+                                    53.833588,
+                                    14.879456
+                                ]
+                            },
+                            "alternateVias": [],
+                            "cost": 0,
+                            "description": "E65, S3",
+                            "endLocation": {
+                                "bbox": [
+                                    51.045139,
+                                    16.843081,
+                                    51.182041,
+                                    17.170481
+                                ],
+                                "name": "Wrocław, Poland",
+                                "point": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        51.11055,
+                                        17.025558
+                                    ]
+                                },
+                                "address": {
+                                    "adminDistrict": "DS",
+                                    "adminDistrict2": "Wrocław",
+                                    "countryRegion": "Poland",
+                                    "formattedAddress": "Wrocław, Poland",
+                                    "locality": "Wrocław"
+                                },
+                                "confidence": "High",
+                                "entityType": "PopulatedPlace",
+                                "geocodePoints": [
+                                    {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.11055,
+                                            17.025558
+                                        ],
+                                        "calculationMethod": "Rooftop",
+                                        "usageTypes": [
+                                            "Display"
+                                        ]
+                                    }
+                                ],
+                                "matchCodes": [
+                                    "Ambiguous"
+                                ]
+                            },
+                            "endTime": "/Date(1644229814804-0800)/",
+                            "itineraryItems": [
+                                {
+                                    "compassDirection": "east",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 75,
+                                            "endPathIndices": [
+                                                2
+                                            ],
+                                            "maneuverType": "DepartStart",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "Baczysław"
+                                            ],
+                                            "roadType": "Street",
+                                            "startPathIndices": [
+                                                0
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "DepartStart",
+                                        "text": "Head east on Baczysław toward 108 / Baczysław"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            53.833588,
+                                            14.879456
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "towardsRoadName": "108 / Baczysław",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.039,
+                                    "travelDuration": 4,
+                                    "travelMode": "Driving",
+                                    "warnings": [
+                                        {
+                                            "severity": "None",
+                                            "text": "Unpaved Road",
+                                            "warningType": "UnPavedRoad"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "compassDirection": "southwest",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 230,
+                                            "endPathIndices": [
+                                                44
+                                            ],
+                                            "locationCodes": [
+                                                "306-15723",
+                                                "306N15723",
+                                                "306-15722"
+                                            ],
+                                            "maneuverType": "TurnRightSharp",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "Baczysław"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258199,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "108"
+                                                        ],
+                                                        "roadShieldType": 2
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                2
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "TurnRightSharp",
+                                        "text": "Take a sharp right onto 108 / Baczysław"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            53.833728,
+                                            14.880012
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 9.94,
+                                    "travelDuration": 483,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "southwest",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 278,
+                                            "endPathIndices": [
+                                                48
+                                            ],
+                                            "locationCodes": [
+                                                "306-15718",
+                                                "306-15722",
+                                                "306+15719"
+                                            ],
+                                            "maneuverType": "EnterRoundabout",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "108"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258204,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "108"
+                                                        ],
+                                                        "roadShieldType": 2
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                44
+                                            ]
+                                        },
+                                        {
+                                            "compassDegrees": 214,
+                                            "endPathIndices": [
+                                                51
+                                            ],
+                                            "locationCodes": [
+                                                "306+15719",
+                                                "306-15722",
+                                                "306P47682"
+                                            ],
+                                            "maneuverType": "ExitRoundabout",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "108"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258204,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "108"
+                                                        ],
+                                                        "roadShieldType": 2
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                48
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "2",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "EnterThenExitRoundabout",
+                                        "text": "At the roundabout, take the 2nd exit"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            53.839617,
+                                            14.749052
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.223,
+                                    "travelDuration": 21,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "south",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 195,
+                                            "endPathIndices": [
+                                                60
+                                            ],
+                                            "locationCodes": [
+                                                "306N15722",
+                                                "306P15719"
+                                            ],
+                                            "maneuverType": "KeepStraight",
+                                            "mode": "Driving",
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                51
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "KeepStraight",
+                                        "text": "Keep straight to get onto road"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            53.83799,
+                                            14.747718
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "signs": [
+                                        "E65",
+                                        "S3",
+                                        "Szczecin"
+                                    ],
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.521,
+                                    "travelDuration": 31,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "southeast",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 128,
+                                            "endPathIndices": [
+                                                64
+                                            ],
+                                            "locationCodes": [
+                                                "306P47292"
+                                            ],
+                                            "maneuverType": "TakeRampRight",
+                                            "mode": "Driving",
+                                            "roadType": "Ramp",
+                                            "startPathIndices": [
+                                                60
+                                            ]
+                                        },
+                                        {
+                                            "compassDegrees": 139,
+                                            "endPathIndices": [
+                                                160
+                                            ],
+                                            "locationCodes": [
+                                                "305+04295",
+                                                "305+14047",
+                                                "306+10781",
+                                                "305P14047",
+                                                "306P10781",
+                                                "305+14030",
+                                                "305P14029",
+                                                "306+22776",
+                                                "305P14030",
+                                                "305+14031",
+                                                "305P14031",
+                                                "306P22776",
+                                                "305+14032",
+                                                "306+06584",
+                                                "305P14032",
+                                                "305P04295",
+                                                "306P06584",
+                                                "305+04296",
+                                                "306+48747",
+                                                "305P04296",
+                                                "306P48747",
+                                                "305+04297",
+                                                "305+14033",
+                                                "306+22777",
+                                                "305P14033",
+                                                "306P22777",
+                                                "305+14012",
+                                                "306+06585",
+                                                "305P14012",
+                                                "306P06585",
+                                                "305+14013",
+                                                "306+48748",
+                                                "305P14013",
+                                                "305+14011",
+                                                "305P14011",
+                                                "306P48748",
+                                                "305+14010",
+                                                "306+10236",
+                                                "305N14042",
+                                                "305N14043",
+                                                "305P14010",
+                                                "306P10236",
+                                                "305-14041",
+                                                "305-55662",
+                                                "306+48749",
+                                                "305N55662",
+                                                "306P48749",
+                                                "306+05046",
+                                                "305N14041",
+                                                "305P04297",
+                                                "306P05046"
+                                            ],
+                                            "maneuverType": "Merge",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "E65",
+                                                "S3"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "E65"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                64
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "RampThenHighwayRight",
+                                        "text": "Take the ramp on the right for E65 / S3"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            53.833737,
+                                            14.745807
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 29.497,
+                                    "travelDuration": 887,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "southwest",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 231,
+                                            "endPathIndices": [
+                                                215
+                                            ],
+                                            "locationCodes": [
+                                                "305+04298",
+                                                "305-14040",
+                                                "306+43074",
+                                                "306P43074",
+                                                "306+05049",
+                                                "305N14040",
+                                                "305P04298",
+                                                "306P05049",
+                                                "305+04299",
+                                                "305-14039",
+                                                "306+43075",
+                                                "306P43075",
+                                                "306+06586",
+                                                "305N14039",
+                                                "306P06586",
+                                                "305-14038",
+                                                "306+43076",
+                                                "306P43076",
+                                                "306+10964",
+                                                "305N14038",
+                                                "305-14037",
+                                                "305P04299",
+                                                "306P10964",
+                                                "305+04300",
+                                                "306+05050",
+                                                "305N14037",
+                                                "305P04300",
+                                                "306P05050",
+                                                "305+04301",
+                                                "305-14036",
+                                                "306+14456"
+                                            ],
+                                            "maneuverType": "KeepStraight",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "E28",
+                                                "S3",
+                                                "S6",
+                                                "E65"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "E28"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                160
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "KeepStraight",
+                                        "text": "Keep straight to get onto E28 / S3 / S6 / E65"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            53.584522,
+                                            14.815124
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 22.601,
+                                    "travelDuration": 689,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "southwest",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 215,
+                                            "endPathIndices": [
+                                                254
+                                            ],
+                                            "locationCodes": [
+                                                "305+04301",
+                                                "305-14036",
+                                                "306+14456",
+                                                "305N14036",
+                                                "305P04301",
+                                                "306N41636",
+                                                "306P14456",
+                                                "305+04302",
+                                                "305-14035",
+                                                "306+11638",
+                                                "306-05267",
+                                                "305N04560",
+                                                "305N14035",
+                                                "306N05267",
+                                                "306P11638",
+                                                "305-07943",
+                                                "305-13333",
+                                                "306+10229",
+                                                "306-05266",
+                                                "305N13333",
+                                                "306N05266",
+                                                "306-10231"
+                                            ],
+                                            "maneuverType": "RoadNameChange",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "E28",
+                                                "A6",
+                                                "S3",
+                                                "E65"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "E28"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                215
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "RoadNameChange",
+                                        "text": "Road name changes to E28 / A6 / S3 / E65"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            53.404174,
+                                            14.72325
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 13.649,
+                                    "travelDuration": 454,
+                                    "travelMode": "Driving",
+                                    "warnings": [
+                                        {
+                                            "origin": "53.37931,14.70776",
+                                            "severity": "Minor",
+                                            "text": "Minor Congestion",
+                                            "to": "53.379175,14.7076",
+                                            "warningType": "TrafficFlow"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "compassDirection": "southeast",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 264,
+                                            "endPathIndices": [
+                                                266
+                                            ],
+                                            "locationCodes": [
+                                                "306P10229",
+                                                "306P36221"
+                                            ],
+                                            "maneuverType": "TakeRampRight",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "S3",
+                                                "E65"
+                                            ],
+                                            "roadType": "Ramp",
+                                            "startPathIndices": [
+                                                254
+                                            ]
+                                        },
+                                        {
+                                            "compassDegrees": 135,
+                                            "endPathIndices": [
+                                                558
+                                            ],
+                                            "locationCodes": [
+                                                "305+07888",
+                                                "305P07887",
+                                                "306+43077",
+                                                "305+13912",
+                                                "305P07888",
+                                                "305+07889",
+                                                "305P13912",
+                                                "306P43077",
+                                                "305+07890",
+                                                "306+10230",
+                                                "305P07889",
+                                                "305P07890",
+                                                "306P10230",
+                                                "305+07891",
+                                                "305+13913",
+                                                "305P07891",
+                                                "306+36856",
+                                                "305+07892",
+                                                "305P07892",
+                                                "306P36856",
+                                                "305+07894",
+                                                "306+43078",
+                                                "305P13913",
+                                                "306P43078",
+                                                "306+10232",
+                                                "305P07894",
+                                                "306P10232",
+                                                "305+07893",
+                                                "305+13914",
+                                                "306+36854",
+                                                "305P07893",
+                                                "305+07895",
+                                                "305P07895",
+                                                "306P36854",
+                                                "305+07896",
+                                                "306+36859",
+                                                "305P13914",
+                                                "306P36859",
+                                                "305+08007",
+                                                "306+36855",
+                                                "305P07896",
+                                                "306P36855",
+                                                "306+13873",
+                                                "305P08007",
+                                                "306P13873",
+                                                "305+07897",
+                                                "305+13915",
+                                                "306+36852",
+                                                "305P13915",
+                                                "305+13916",
+                                                "305P07897",
+                                                "306P36852",
+                                                "305+07898",
+                                                "306+36853",
+                                                "305P07898",
+                                                "305+07899",
+                                                "306P36853",
+                                                "306+47429",
+                                                "305P13916",
+                                                "306P47429",
+                                                "305+13917",
+                                                "306+10234",
+                                                "305P07899",
+                                                "305P13917",
+                                                "306P10234",
+                                                "305+04318",
+                                                "305+07900",
+                                                "305+07901",
+                                                "306+10238",
+                                                "305P04318",
+                                                "305P07900",
+                                                "305P07901",
+                                                "306P10238",
+                                                "305+04319",
+                                                "305+07902",
+                                                "306+05064",
+                                                "305P07902",
+                                                "306P05064",
+                                                "305+09868",
+                                                "305+55663",
+                                                "306+43113",
+                                                "305P09868",
+                                                "306P43113",
+                                                "305+09039",
+                                                "306+48206",
+                                                "305P55663",
+                                                "306P48206",
+                                                "305+13919",
+                                                "306+50271",
+                                                "305P09039",
+                                                "305P13919",
+                                                "306P50271"
+                                            ],
+                                            "maneuverType": "Merge",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "E65",
+                                                "S3"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "E65"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                266
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "RampThenHighwayRight",
+                                        "text": "Take the ramp on the right for E65 / S3 and head toward Gorzów Wielkopolski / Poznań"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            53.341312,
+                                            14.576986
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "signs": [
+                                        "Gorzów Wielkopolski",
+                                        "Poznań",
+                                        "E65",
+                                        "S3"
+                                    ],
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 111.458,
+                                    "travelDuration": 3264,
+                                    "travelMode": "Driving",
+                                    "warnings": [
+                                        {
+                                            "severity": "None",
+                                            "text": "Entering Lubuskie",
+                                            "warningType": "AdminDivisionChange"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "compassDirection": "southeast",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 118,
+                                            "endPathIndices": [
+                                                583
+                                            ],
+                                            "locationCodes": [
+                                                "305+13920",
+                                                "306+50272",
+                                                "306-45480"
+                                            ],
+                                            "maneuverType": "KeepStraight",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "E65",
+                                                "S3",
+                                                "24"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "E65"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                558
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "KeepStraight",
+                                        "text": "Keep straight to get onto E65 / S3 / 24"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            52.586782,
+                                            15.449986
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 6.543,
+                                    "travelDuration": 192,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "east",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 87,
+                                            "endPathIndices": [
+                                                824
+                                            ],
+                                            "locationCodes": [
+                                                "305P13920",
+                                                "306P50272",
+                                                "305+04327",
+                                                "305+13921",
+                                                "305+55664",
+                                                "306+46039",
+                                                "306P46039",
+                                                "305P55664",
+                                                "305+50399",
+                                                "306+50273",
+                                                "305P13921",
+                                                "305+13922",
+                                                "305P04327",
+                                                "305P13922",
+                                                "305P50399",
+                                                "306P50273",
+                                                "305+04328",
+                                                "305+55665",
+                                                "306+50274",
+                                                "305P04328",
+                                                "305+04329",
+                                                "305+13969",
+                                                "305P13969",
+                                                "305P04329",
+                                                "305P55665",
+                                                "306P50274",
+                                                "305+04330",
+                                                "305+13924",
+                                                "306+50275",
+                                                "305+09827",
+                                                "305P04330",
+                                                "305P09827",
+                                                "305P13923",
+                                                "305P13924",
+                                                "306P50275",
+                                                "305+04331",
+                                                "305+13925",
+                                                "306+44885",
+                                                "305P13925",
+                                                "306P44885",
+                                                "305+13926",
+                                                "305+13927",
+                                                "306+50276",
+                                                "305P13926",
+                                                "305P13927",
+                                                "306P50276",
+                                                "305+13928",
+                                                "306+50277",
+                                                "305P13928",
+                                                "306P50277",
+                                                "305+13929",
+                                                "306+49403",
+                                                "305P13929",
+                                                "305+13931",
+                                                "305+13930",
+                                                "305P13930",
+                                                "305P13931",
+                                                "306P49403",
+                                                "305+13932",
+                                                "305+13933",
+                                                "306+48188",
+                                                "305P13932",
+                                                "305P13933",
+                                                "306P48188",
+                                                "305+13934",
+                                                "306+50278",
+                                                "305P13934",
+                                                "305+13935",
+                                                "305P13935",
+                                                "305+13936",
+                                                "305+13937",
+                                                "305P13936",
+                                                "305P13937",
+                                                "306P50278",
+                                                "305+04338",
+                                                "305+13939",
+                                                "305+55666",
+                                                "305-06168",
+                                                "306+50279",
+                                                "306-36858",
+                                                "305P55666",
+                                                "306N36858",
+                                                "306P50279",
+                                                "306+50280",
+                                                "306-06820",
+                                                "305P04338",
+                                                "305P13939",
+                                                "305+04339",
+                                                "305+13940"
+                                            ],
+                                            "maneuverType": "KeepStraight",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "S3",
+                                                "E65"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "S3"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                583
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "KeepStraight",
+                                        "text": "Keep straight to get onto S3 / E65"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            52.561199,
+                                            15.515414
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "signs": [
+                                        "A2",
+                                        "Poznań",
+                                        "Zielona Góra",
+                                        "E65",
+                                        "S3"
+                                    ],
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 73.129,
+                                    "travelDuration": 2159,
+                                    "travelMode": "Driving",
+                                    "warnings": [
+                                        {
+                                            "origin": "52.317301,15.548424",
+                                            "severity": "Minor",
+                                            "text": "Minor Congestion",
+                                            "to": "52.314477,15.546861",
+                                            "warningType": "TrafficFlow"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "compassDirection": "southwest",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 217,
+                                            "endPathIndices": [
+                                                893
+                                            ],
+                                            "locationCodes": [
+                                                "305P04339",
+                                                "305P13940",
+                                                "306P50280",
+                                                "305+04340",
+                                                "305+13941",
+                                                "305+13942",
+                                                "306+50281",
+                                                "305P04340",
+                                                "305P07904",
+                                                "305P13941",
+                                                "305+04341",
+                                                "305+07905",
+                                                "305P04341",
+                                                "305P07905",
+                                                "305P13942",
+                                                "306P50281",
+                                                "305+04342",
+                                                "305+07906",
+                                                "305+13943",
+                                                "306+44785",
+                                                "305P13943",
+                                                "306P44785",
+                                                "305+13945",
+                                                "306+50282",
+                                                "305P07906",
+                                                "305P13945",
+                                                "306P50282",
+                                                "305+07907",
+                                                "305+07908",
+                                                "306+50283",
+                                                "305P07907",
+                                                "305P07908",
+                                                "305P52117",
+                                                "306P50283",
+                                                "305+04351",
+                                                "305+50254",
+                                                "306+51104",
+                                                "305P04351",
+                                                "305P50254",
+                                                "305+04352",
+                                                "305+50255"
+                                            ],
+                                            "maneuverType": "KeepStraight",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "E65",
+                                                "S3"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "E65"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                824
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "KeepStraight",
+                                        "text": "Keep straight to get onto E65 / S3"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.961074,
+                                            15.560095
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "signs": [
+                                        "Legnica",
+                                        "Wrocław",
+                                        "E65",
+                                        "S3"
+                                    ],
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 30.526,
+                                    "travelDuration": 902,
+                                    "travelMode": "Driving",
+                                    "warnings": [
+                                        {
+                                            "origin": "51.794682,15.676499",
+                                            "severity": "Minor",
+                                            "text": "Minor Congestion",
+                                            "to": "51.793725,15.676335",
+                                            "warningType": "TrafficFlow"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "compassDirection": "southeast",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 125,
+                                            "endPathIndices": [
+                                                895
+                                            ],
+                                            "locationCodes": [
+                                                "305+04352",
+                                                "305+50255",
+                                                "306+51104"
+                                            ],
+                                            "maneuverType": "RoadNameChange",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "3",
+                                                "E65"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "3"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                893
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "RoadNameChange",
+                                        "text": "Road name changes to 3 / E65"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.73157,
+                                            15.726149
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.031,
+                                    "travelDuration": 0,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "southeast",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 124,
+                                            "endPathIndices": [
+                                                914
+                                            ],
+                                            "locationCodes": [
+                                                "305+04352",
+                                                "305+50255",
+                                                "306+51104",
+                                                "305P50255",
+                                                "306P51104",
+                                                "305+50256",
+                                                "306+51105",
+                                                "305P50256",
+                                                "305+50257"
+                                            ],
+                                            "maneuverType": "RoadNameChange",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "S3",
+                                                "E65"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "S3"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                895
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "RoadNameChange",
+                                        "text": "Road name changes to S3 / E65"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.731361,
+                                            15.726446
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 5.781,
+                                    "travelDuration": 170,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "southeast",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 131,
+                                            "endPathIndices": [
+                                                915
+                                            ],
+                                            "locationCodes": [
+                                                "305P50257",
+                                                "306P51105"
+                                            ],
+                                            "maneuverType": "KeepStraight",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "E65"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "E65"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                914
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "KeepStraight",
+                                        "text": "Keep straight to get onto E65"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.684757,
+                                            15.758256
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "signs": [
+                                        "Legnica",
+                                        "S3"
+                                    ],
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.043,
+                                    "travelDuration": 1,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "southeast",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 128,
+                                            "endPathIndices": [
+                                                1190
+                                            ],
+                                            "locationCodes": [
+                                                "305P50257",
+                                                "306P51105",
+                                                "305+04355",
+                                                "305+50258",
+                                                "306+51106",
+                                                "305P50258",
+                                                "306P51106",
+                                                "305+55667",
+                                                "306+51144",
+                                                "305P55667",
+                                                "305+50259",
+                                                "305P50259",
+                                                "306P51144",
+                                                "305+04358",
+                                                "305+50260",
+                                                "306+51108",
+                                                "305P04358",
+                                                "305P50260",
+                                                "306P51108",
+                                                "305+04359",
+                                                "305+50262",
+                                                "306+51109",
+                                                "305P50262",
+                                                "306P51109",
+                                                "305+50263",
+                                                "305P50263",
+                                                "306+51110",
+                                                "305+50264",
+                                                "305P50264",
+                                                "305+50265",
+                                                "305P50265",
+                                                "306P51110",
+                                                "305+04363",
+                                                "305+50266",
+                                                "306+51111",
+                                                "305P50266",
+                                                "305+50267",
+                                                "305P50267",
+                                                "306P51111",
+                                                "305+50268",
+                                                "306+51112",
+                                                "305P50268",
+                                                "306P51112",
+                                                "305+50269",
+                                                "306+51113",
+                                                "305P50269",
+                                                "306P51113",
+                                                "305+50270",
+                                                "306+51114",
+                                                "305P50270",
+                                                "306P51114",
+                                                "305+50271",
+                                                "306+51115",
+                                                "305P50271",
+                                                "306P51115",
+                                                "305+04370",
+                                                "305+50272",
+                                                "306+51116",
+                                                "305P04370",
+                                                "305+04371",
+                                                "305P50272",
+                                                "306P51116",
+                                                "305+50273",
+                                                "306+51117",
+                                                "305P50273",
+                                                "305+50274"
+                                            ],
+                                            "maneuverType": "RoadNameChange",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "S3",
+                                                "E65"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "S3"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                915
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "RoadNameChange",
+                                        "text": "Road name changes to S3 / E65"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.68444,
+                                            15.758621
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 73.165,
+                                    "travelDuration": 2190,
+                                    "travelMode": "Driving",
+                                    "warnings": [
+                                        {
+                                            "severity": "None",
+                                            "text": "Entering Dolnośląskie",
+                                            "warningType": "AdminDivisionChange"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "compassDirection": "south",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 167,
+                                            "endPathIndices": [
+                                                1195
+                                            ],
+                                            "maneuverType": "TakeRampRight",
+                                            "mode": "Driving",
+                                            "roadType": "Ramp",
+                                            "startPathIndices": [
+                                                1190
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "50",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "TakeRampRight",
+                                        "text": "At Exit 50, head right on the ramp toward D / Jędrzychowice / PL / Wrocław / Zgorzelec"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.175798,
+                                            16.091595
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "signs": [
+                                        "A4",
+                                        "E40",
+                                        "D",
+                                        "Jędrzychowice",
+                                        "PL",
+                                        "Wrocław",
+                                        "Zgorzelec"
+                                    ],
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.366,
+                                    "travelDuration": 16,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "southwest",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 212,
+                                            "endPathIndices": [
+                                                1204
+                                            ],
+                                            "maneuverType": "Merge",
+                                            "mode": "Driving",
+                                            "roadType": "Highway",
+                                            "startPathIndices": [
+                                                1195
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "Merge",
+                                        "text": "Merge onto road"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.172655,
+                                            16.091936
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.744,
+                                    "travelDuration": 37,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "east",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 84,
+                                            "endPathIndices": [
+                                                1208
+                                            ],
+                                            "maneuverType": "TakeRampStraight",
+                                            "mode": "Driving",
+                                            "roadType": "Ramp",
+                                            "startPathIndices": [
+                                                1204
+                                            ]
+                                        },
+                                        {
+                                            "compassDegrees": 100,
+                                            "endPathIndices": [
+                                                1259
+                                            ],
+                                            "locationCodes": [
+                                                "305+04491",
+                                                "306+04922",
+                                                "305P04491",
+                                                "306P04922",
+                                                "305+04492",
+                                                "305+13342",
+                                                "305+13343",
+                                                "305P13342",
+                                                "306+41683",
+                                                "306P41683",
+                                                "306+38210",
+                                                "305P13343",
+                                                "306P38210",
+                                                "305+13344",
+                                                "306+09765",
+                                                "305P13344",
+                                                "306P09765",
+                                                "305+13345",
+                                                "306+07153",
+                                                "305P13345",
+                                                "306P07153",
+                                                "305+13346",
+                                                "306+04924",
+                                                "305P13346",
+                                                "305P04492",
+                                                "306P04924",
+                                                "305+04493",
+                                                "305+13347",
+                                                "306+07154",
+                                                "305P13347",
+                                                "306P07154",
+                                                "306+07155",
+                                                "305+13348",
+                                                "305P13348",
+                                                "306P07155",
+                                                "305+13349",
+                                                "306+04925",
+                                                "305P13349",
+                                                "305P04493",
+                                                "306P04925"
+                                            ],
+                                            "maneuverType": "Merge",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "A4",
+                                                "E40"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "A4"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                1208
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "RampToHighwayStraight",
+                                        "text": "Take the ramp for A4 / E40"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.167234,
+                                            16.094213
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 39.161,
+                                    "travelDuration": 1143,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "east",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 106,
+                                            "endPathIndices": [
+                                                1293
+                                            ],
+                                            "locationCodes": [
+                                                "305+04494",
+                                                "305-04658",
+                                                "306+41684",
+                                                "306-43912",
+                                                "306P41684",
+                                                "306+04926",
+                                                "305P04494",
+                                                "306P04926",
+                                                "305+03944",
+                                                "305+13350",
+                                                "306+41685",
+                                                "305P13350",
+                                                "305+09081",
+                                                "306P41685",
+                                                "306+07156",
+                                                "305P09081",
+                                                "306P07156",
+                                                "306+10435"
+                                            ],
+                                            "maneuverType": "KeepStraight",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "A4",
+                                                "5",
+                                                "E40"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "A4"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                1259
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "KeepStraight",
+                                        "text": "Keep straight to get onto A4 / 5 / E40"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.041884,
+                                            16.598221
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 23.756,
+                                    "travelDuration": 706,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "north",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 84,
+                                            "endPathIndices": [
+                                                1310
+                                            ],
+                                            "locationCodes": [
+                                                "306-43912",
+                                                "306P35939",
+                                                "306P35925",
+                                                "306P35909"
+                                            ],
+                                            "maneuverType": "TakeRampRight",
+                                            "mode": "Driving",
+                                            "roadType": "Ramp",
+                                            "startPathIndices": [
+                                                1293
+                                            ]
+                                        },
+                                        {
+                                            "compassDegrees": 345,
+                                            "endPathIndices": [
+                                                1319
+                                            ],
+                                            "locationCodes": [
+                                                "305+07854",
+                                                "305+07855",
+                                                "306+10489",
+                                                "306+10534",
+                                                "306-43912",
+                                                "305P07854",
+                                                "305P07855",
+                                                "306P10489",
+                                                "305+07856",
+                                                "306+10481",
+                                                "305P07856",
+                                                "305+07857"
+                                            ],
+                                            "maneuverType": "Merge",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "A8",
+                                                "E67",
+                                                "S8"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258177,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "E67"
+                                                        ],
+                                                        "roadShieldType": 1
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "LimitedAccessHighway",
+                                            "startPathIndices": [
+                                                1310
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "RampThenHighwayRight",
+                                        "text": "Take the ramp on the right for A8 / E67 / S8 and head toward CZ / Kudowa-Słone / PL / Port Lotniczy / Poznań / Warszawa / Wrocław"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.042226,
+                                            16.923806
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "signs": [
+                                        "CZ",
+                                        "Kudowa-Słone",
+                                        "PL",
+                                        "Port Lotniczy",
+                                        "Poznań",
+                                        "Warszawa",
+                                        "Wrocław",
+                                        "A8",
+                                        "E67",
+                                        "S8"
+                                    ],
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 7.622,
+                                    "travelDuration": 256,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "northeast",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 27,
+                                            "endPathIndices": [
+                                                1325
+                                            ],
+                                            "locationCodes": [
+                                                "306P35981"
+                                            ],
+                                            "maneuverType": "TakeRampRight",
+                                            "mode": "Driving",
+                                            "roadType": "Ramp",
+                                            "startPathIndices": [
+                                                1319
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "TakeRampRight",
+                                        "text": "Take the ramp on the right and head toward Muchobór / Port Lotniczy / Wrocław"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.102192,
+                                            16.93405
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "signs": [
+                                        "Muchobór",
+                                        "Port Lotniczy",
+                                        "Wrocław"
+                                    ],
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.455,
+                                    "travelDuration": 23,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "north",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 15,
+                                            "endPathIndices": [
+                                                1327
+                                            ],
+                                            "locationCodes": [
+                                                "306P35989"
+                                            ],
+                                            "maneuverType": "Merge",
+                                            "mode": "Driving",
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                1325
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "Merge",
+                                        "text": "Merge onto road"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.105802,
+                                            16.936888
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.382,
+                                    "travelDuration": 25,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "east",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 79,
+                                            "endPathIndices": [
+                                                1329
+                                            ],
+                                            "locationCodes": [
+                                                "305+36178",
+                                                "305P43013",
+                                                "306P10490"
+                                            ],
+                                            "maneuverType": "EnterRoundabout",
+                                            "mode": "Driving",
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                1327
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "EnterRoundabout",
+                                        "text": "Enter the roundabout"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.109201,
+                                            16.937705
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.01,
+                                    "travelDuration": 5,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "east",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 85,
+                                            "endPathIndices": [
+                                                1334
+                                            ],
+                                            "locationCodes": [
+                                                "305+36178",
+                                                "306+02609"
+                                            ],
+                                            "maneuverType": "ExitRoundabout",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "Graniczna"
+                                            ],
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                1329
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "1",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "ExitRoundabout",
+                                        "text": "Exit the roundabout at the 1st exit, onto Graniczna"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.10923,
+                                            16.937834
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.918,
+                                    "travelDuration": 65,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "north",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 232,
+                                            "endPathIndices": [
+                                                1340
+                                            ],
+                                            "locationCodes": [
+                                                "305N36129",
+                                                "305P36129",
+                                                "305P36178",
+                                                "305P43332",
+                                                "306N02620",
+                                                "306P02429",
+                                                "306P02609",
+                                                "305N36178",
+                                                "305N43332",
+                                                "306N02609",
+                                                "306P02620"
+                                            ],
+                                            "maneuverType": "EnterRoundabout",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "Rondo Rotmistrza Witolda Pileckiego"
+                                            ],
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                1334
+                                            ]
+                                        },
+                                        {
+                                            "compassDegrees": 11,
+                                            "endPathIndices": [
+                                                1346
+                                            ],
+                                            "locationCodes": [
+                                                "305+36130",
+                                                "305+43330",
+                                                "306+13343",
+                                                "305P43330",
+                                                "306P13343",
+                                                "306+02599",
+                                                "305P36130",
+                                                "306P02599"
+                                            ],
+                                            "maneuverType": "ExitRoundabout",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "Strzegomska"
+                                            ],
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                1340
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "2",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "EnterThenExitRoundabout",
+                                        "text": "At the roundabout, take the 2nd exit for Strzegomska"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.106976,
+                                            16.950107
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 1.038,
+                                    "travelDuration": 118,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "east",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 73,
+                                            "endPathIndices": [
+                                                1364
+                                            ],
+                                            "locationCodes": [
+                                                "305+36131",
+                                                "305+56786",
+                                                "306+02430",
+                                                "305P56786",
+                                                "306P02430",
+                                                "306+13344",
+                                                "305+56787",
+                                                "305P36131",
+                                                "305P56787",
+                                                "306P13344",
+                                                "305+13180",
+                                                "305+36132",
+                                                "306+36653",
+                                                "305P13180",
+                                                "305+13181",
+                                                "305P13181",
+                                                "306P36653",
+                                                "305+13182",
+                                                "306+13345",
+                                                "305P13182",
+                                                "305+13183",
+                                                "305P13183",
+                                                "306P13345",
+                                                "305+56788",
+                                                "306+02431",
+                                                "305P56788",
+                                                "305N43698",
+                                                "305P36132",
+                                                "306P02431",
+                                                "306P02433"
+                                            ],
+                                            "maneuverType": "KeepStraight",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "Strzegomska"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258204,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "362"
+                                                        ],
+                                                        "roadShieldType": 2
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                1346
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "KeepStraight",
+                                        "text": "Keep straight to get onto 362 / Strzegomska"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.11212,
+                                            16.960207
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 3.319,
+                                    "travelDuration": 328,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "northeast",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 25,
+                                            "endPathIndices": [
+                                                1368
+                                            ],
+                                            "locationCodes": [
+                                                "305N43700",
+                                                "305P36135",
+                                                "306N36677",
+                                                "305+36136"
+                                            ],
+                                            "maneuverType": "TurnToStayLeft",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "Plac Strzegomski"
+                                            ],
+                                            "roadShieldRequestParameters": {
+                                                "bucket": 8258212,
+                                                "shields": [
+                                                    {
+                                                        "labels": [
+                                                            "362"
+                                                        ],
+                                                        "roadShieldType": 2
+                                                    }
+                                                ]
+                                            },
+                                            "roadType": "Arterial",
+                                            "startPathIndices": [
+                                                1364
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "TurnToStayLeft",
+                                        "text": "Turn left to stay on 362 / Plac Strzegomski"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.112152,
+                                            17.005967
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.048,
+                                    "travelDuration": 21,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "east",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 99,
+                                            "endPathIndices": [
+                                                1374
+                                            ],
+                                            "locationCodes": [
+                                                "305+13123",
+                                                "305+56716",
+                                                "305-36137",
+                                                "306+13328",
+                                                "305P56716",
+                                                "305+43731",
+                                                "305P13123",
+                                                "305+13124",
+                                                "305P43731",
+                                                "306P13328",
+                                                "306+02408"
+                                            ],
+                                            "maneuverType": "TurnRight",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "Legnicka"
+                                            ],
+                                            "roadType": "Arterial",
+                                            "startPathIndices": [
+                                                1368
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "TurnRight",
+                                        "text": "Turn right onto Legnicka"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.112571,
+                                            17.006141
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 1.093,
+                                    "travelDuration": 133,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "east",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 105,
+                                            "endPathIndices": [
+                                                1376
+                                            ],
+                                            "locationCodes": [
+                                                "305N36137",
+                                                "305P13124",
+                                                "306P02408",
+                                                "305P36150",
+                                                "305P36152",
+                                                "306P02667",
+                                                "306P02670",
+                                                "305+36151",
+                                                "305+36153",
+                                                "306+02668",
+                                                "306+02671"
+                                            ],
+                                            "maneuverType": "RoadNameChange",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "Plac Jana Pawła II"
+                                            ],
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                1374
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "RoadNameChange",
+                                        "text": "Road name changes to Plac Jana Pawła II"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.111637,
+                                            17.021288
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.155,
+                                    "travelDuration": 18,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "east",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 103,
+                                            "endPathIndices": [
+                                                1378
+                                            ],
+                                            "locationCodes": [
+                                                "305+36151",
+                                                "305+36153",
+                                                "306+02668",
+                                                "306+02671"
+                                            ],
+                                            "maneuverType": "RoadNameChange",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "Ruska"
+                                            ],
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                1376
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "RoadNameChange",
+                                        "text": "Road name changes to Ruska"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.11104,
+                                            17.023279
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0.168,
+                                    "travelDuration": 30,
+                                    "travelMode": "Driving"
+                                },
+                                {
+                                    "compassDirection": "east",
+                                    "details": [
+                                        {
+                                            "compassDegrees": 101,
+                                            "endPathIndices": [
+                                                1378
+                                            ],
+                                            "locationCodes": [
+                                                "305+36151",
+                                                "305+36153",
+                                                "306+02668",
+                                                "306+02671"
+                                            ],
+                                            "maneuverType": "ArriveFinish",
+                                            "mode": "Driving",
+                                            "names": [
+                                                "Ruska"
+                                            ],
+                                            "roadType": "MajorRoad",
+                                            "startPathIndices": [
+                                                1378
+                                            ]
+                                        }
+                                    ],
+                                    "exit": "",
+                                    "hints": [
+                                        {
+                                            "hintType": "PreviousIntersection",
+                                            "text": "The last intersection before your destination is Grabarska"
+                                        },
+                                        {
+                                            "hintType": "NextIntersection",
+                                            "text": "If you reach Kazimierza Wielkiego, you've gone too far"
+                                        }
+                                    ],
+                                    "iconType": "Auto",
+                                    "instruction": {
+                                        "formattedText": null,
+                                        "maneuverType": "ArriveFinish",
+                                        "text": "Arrive at Wrocław, Poland"
+                                    },
+                                    "isRealTimeTransit": false,
+                                    "maneuverPoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.110551,
+                                            17.025558
+                                        ]
+                                    },
+                                    "realTimeTransitDelay": 0,
+                                    "sideOfStreet": "Unknown",
+                                    "tollZone": "",
+                                    "transitTerminus": "",
+                                    "travelDistance": 0,
+                                    "travelDuration": 0,
+                                    "travelMode": "Driving"
+                                }
+                            ],
+                            "routeRegion": "WWMX",
+                            "routeSubLegs": [
+                                {
+                                    "endWaypoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            51.110551,
+                                            17.025558
+                                        ],
+                                        "description": "Wrocław, Poland",
+                                        "isVia": false,
+                                        "locationIdentifier": "0|21|248|179|200|225|6|148|88|0|0|224|1|232|59|42|63|0|51.110551,17.025558",
+                                        "routePathIndex": 1378
+                                    },
+                                    "startWaypoint": {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            53.833588,
+                                            14.879456
+                                        ],
+                                        "description": "Golczewo, Poland",
+                                        "isVia": false,
+                                        "locationIdentifier": "0|21|248|179|200|97|41|211|86|0|0|224|1|160|34|220|62|2|53.833588,14.879456",
+                                        "routePathIndex": 0
+                                    },
+                                    "travelDistance": 456.381,
+                                    "travelDuration": 14371
+                                }
+                            ],
+                            "startLocation": {
+                                "bbox": [
+                                    53.767746,
+                                    14.76999,
+                                    53.912075,
+                                    15.098341
+                                ],
+                                "name": "Golczewo, Poland",
+                                "point": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        53.833954,
+                                        14.879102
+                                    ]
+                                },
+                                "address": {
+                                    "adminDistrict": "ZP",
+                                    "countryRegion": "Poland",
+                                    "formattedAddress": "Golczewo, Poland",
+                                    "locality": "Golczewo"
+                                },
+                                "confidence": "High",
+                                "entityType": "PopulatedPlace",
+                                "geocodePoints": [
+                                    {
+                                        "type": "Point",
+                                        "coordinates": [
+                                            53.833954,
+                                            14.879102
+                                        ],
+                                        "calculationMethod": "Rooftop",
+                                        "usageTypes": [
+                                            "Display"
+                                        ]
+                                    }
+                                ],
+                                "matchCodes": [
+                                    "Ambiguous"
+                                ]
+                            },
+                            "startTime": "/Date(1644216127804-0800)/",
+                            "travelDistance": 456.381,
+                            "travelDuration": 14371,
+                            "travelMode": "Driving"
+                        }
+                    ],
+                    "trafficCongestion": "None",
+                    "trafficDataUsed": "None",
+                    "travelDistance": 456.381,
+                    "travelDuration": 14371,
+                    "travelDurationTraffic": 13687,
+                    "travelMode": "Driving"
+                }
+            ]
+        }
+    ],
+    "statusCode": 200,
+    "statusDescription": "OK",
+    "traceId": "0a8dac87f8ab40908890b3ff2558a3e5|DU0000275B|0.0.0.0|DU0000049D, Leg0-DU00001FE5|Ref A: 124F9CB3B4D44FDB8FB321558CCE6FB0 Ref B: DB3EDGE0918 Ref C: 2022-02-06T21:42:07Z|Ref A: 363C5ADA532A49519A710BB1DCC312BF Ref B: DB3EDGE3106 Ref C: 2022-02-06T21:42:07Z"
+}
