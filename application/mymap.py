@@ -2,7 +2,8 @@ import requests
 from .route import Route
 
 class MyMap:
-    __key = "AsteIyPnZzvNB9aYKbrhImkSd7kFdJ-GZOz4GawrO6qssxqBMGW5z0Ks-xSm3A6s"
+    # Insert your app key here
+    __key = ""
 
     # get itinerarty points from route
     def getItineraryPoints(self, route):

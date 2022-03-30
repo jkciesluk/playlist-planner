@@ -3,7 +3,8 @@ from requests.models import PreparedRequest
 
 
 def encodeAuthorization():
-    auth = "e892b60798b94c6b9d526a7e2f408be5:" + "572c283a63af4aef9e0bd0b283b8081c"
+    # your secret key and client id
+    auth = "" + ""
     auth_bytes = auth.encode("ascii")
     base64_bytes = base64.b64encode(auth_bytes)
     base64_string = base64_bytes.decode("ascii")
@@ -14,7 +15,7 @@ def prepareUrl():
     req = PreparedRequest()
     url = "https://accounts.spotify.com/authorize?"
     params = {"response_type": 'code',
-              "client_id": "e892b60798b94c6b9d526a7e2f408be5",
+              "client_id": "", # your client id
               "scope": "user-read-private user-read-email playlist-modify-public user-top-read",
               "redirect_uri": "http://127.0.0.1:5000/createAccount",
               "state": "securestatecode"}
